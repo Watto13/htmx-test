@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>
+      <h1>Swap</h1>
+      <p>Swapping the target inner list element with the request method text</p>
+      <button
+        hx-swap="innerHTML"
+        hx-target=".target"
+        hx-get="http://localhost:8080/hello"
+      >
+        Get Request
+      </button>
+      <button
+        hx-swap="innerHTML"
+        hx-target=".target"
+        hx-post="http://localhost:8080/hello"
+      >
+        Post Request
+      </button>
+      <div class="target">
+        <p>Target</p>
+      </div>
+      <div>
+        <h1>Time</h1>
+        <p>Using every 1s trigger</p>
+        <div hx-get="http://localhost:8080/time" hx-trigger="every 1s"></div>
+      </div>
+    </div>
+  </body>
+</html>
